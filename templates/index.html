@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 booking-form">
+						<div class="booking-cta">
+							<h1>Your Predictions</h1>
+							{% if prediction %}
+							<p>The Price Index is Rwf {{prediction}} </p>
+							{% else %}
+							<p>Make your price prediction on the input boxes </p>
+							{% endif %}
+						</div>
+					</div>
+					<div class="col-md-6 col-md-offset-1">
+						<div class="booking-form">
+							<form method="post">
+								{% csrf_token %}
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="number" name="area">
+											<span class="form-label">Area</span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Bed Rooms</span>
+											<select class="form-control" name="bedrooms">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<div class="form-group">
+											<span class="form-label">bathrooms</span>
+											<select class="form-control" name="bathrooms">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Stories</span>
+											<select class="form-control" name="stories">
+												<option value="1">Yes</option>
+												<option value="0">No</option>
+											</select>
+											<span class="select-arrow"></span>
+										</div>
+									</div>
+								</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<span class="form-label">Main Road</span>
+												<select class="form-control" name="mainroad">
+													<option value="1">Yes</option>
+													<option value="0">No</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<span class="form-label">Guestroom</span>
+												<select class="form-control" name="guestroom">
+													<option value="1">Yes</option>
+													<option value="0">No</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<span class="form-label">Basement</span>
+												<select class="form-control" name="basement">
+													<option value="1">Yes</option>
+													<option value="0">No</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<span class="form-label">Hot Water Heating</span>
+												<select class="form-control" name="hotwaterheating">
+													<option value="1">Yes</option>
+													<option value="0">No</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<span class="form-label">Air Conditioning</span>
+												<select class="form-control" name="airconditioning">
+													<option value="1">Yes</option>
+													<option value="0">No</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<span class="form-label">Parking</span>
+												<select class="form-control" name="parking">
+													<option value="1">Yes</option>
+													<option value="0">No</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<span class="form-label">prefarea</span>
+												<select class="form-control" name="prefarea">
+													<option value="1">Yes</option>
+													<option value="0">No</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<span class="form-label">Furnishing Status</span>
+												<select class="form-control" name="furnishingstatus">
+													<option value="1">Furnished</option>
+													<option value="2">Semi-Furnished</option>
+													<option value="0">Unfurnished</option>
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div>
+									</div>
+								
+								<div class="form-btn">
+									<button class="submit-btn">Predict Now</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+
